@@ -7,11 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="" HorizontalAlignment="Left" Height="24" Margin="10,29,0,0" VerticalAlignment="Top" Width="174"/>
-        <ListBox HorizontalAlignment="Left" Height="269" Margin="10,80,0,0" VerticalAlignment="Top" Width="174"/>
-        <Button Content="Sikeres vizsgát tett" HorizontalAlignment="Left" Height="28" Margin="266,80,0,0" VerticalAlignment="Top" Width="155"/>
-        <Label Content="" HorizontalAlignment="Left" Height="28" Margin="456,81,0,0" VerticalAlignment="Top" Width="149"/>
-        <Button Content="Eredmények állományba írása" HorizontalAlignment="Left" Height="25" Margin="241,159,0,0" VerticalAlignment="Top" Width="191" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="vizsgaszam" Content="" HorizontalAlignment="Left" Height="34" Margin="10,29,0,0" VerticalAlignment="Top" Width="174"/>
+        <ListBox x:Name="listbox" HorizontalAlignment="Left" Height="299" Margin="10,80,0,0" VerticalAlignment="Top" Width="174"/>
+        <Button x:Name="sikeres" Content="Sikeres vizsgát tett" HorizontalAlignment="Left" Height="28" Margin="246,67,0,0" VerticalAlignment="Top" Width="155" Click="sikeres_Click"/>
+        <Button x:Name="alomanyir" Content="Eredmények állományba írása" HorizontalAlignment="Left" Height="25" Margin="241,159,0,0" VerticalAlignment="Top" Width="191" RenderTransformOrigin="0.5,0.5" Click="alomanyir_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -21,10 +20,14 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Label Content="Keresett tanuló" HorizontalAlignment="Left" Height="33" Margin="226,217,0,0" VerticalAlignment="Top" Width="156"/>
-        <TextBox HorizontalAlignment="Left" Height="25" Margin="226,255,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="195"/>
-        <Label Content="" HorizontalAlignment="Left" Height="64" Margin="226,285,0,0" VerticalAlignment="Top" Width="304"/>
+        
         <Label x:Name="vizsgadone" Content="" HorizontalAlignment="Left" Height="50" Margin="226,354,0,0" VerticalAlignment="Top" Width="279"/>
+        <Label x:Name="sikeresszam" Content="" HorizontalAlignment="Left" Height="34" Margin="427,63,0,0" VerticalAlignment="Top" Width="78"/>
+        <StackPanel Orientation="Vertical" Margin="231,217,231,30">
+            <TextBlock Text="Tanuló keresése:" Margin="0,0,0,5" />
+            <TextBox x:Name="keresBox" Height="25" Margin="0,0,0,10" KeyDown="keresBox_KeyDown" />
+            <TextBlock x:Name="eredmenyBlock" Text="" Margin="0,10,0,0" TextWrapping="Wrap" />
+        </StackPanel>
 
     </Grid>
 </Window>

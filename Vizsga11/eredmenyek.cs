@@ -32,7 +32,7 @@ namespace Vizsga11
             SzobeliIT = Convert.ToDouble(s[8]);
         }
 
-        public double vegeredemeny(double szam)
+        public double vegeredmeny(double szam)
         {
             return szam*100;
         }
@@ -58,11 +58,50 @@ namespace Vizsga11
             }
             else
             {
-                szoveg = "elégedetlen";
+                szoveg = "elégtelen";
             }
 
 
             return szoveg;
+        }
+        public double LegjobbEredmeny()
+        {
+            return new List<double>
+        {
+            ItHalozatIrasbeli,
+            ProgramozasIrasbeli,
+            HalozatokAModul,
+            HalozatokBModul,
+            HalozatokCModul,
+            HalozatokDModul,
+            SzobeliAngol,
+            SzobeliIT
+        }.Max()*100;
+        }
+        public double LeggyengebbEredmeny()
+        {
+            return new List<double>
+        {
+            ItHalozatIrasbeli,
+            ProgramozasIrasbeli,
+            HalozatokAModul,
+            HalozatokBModul,
+            HalozatokCModul,
+            HalozatokDModul,
+            SzobeliAngol,
+            SzobeliIT
+        }.Min()*100;
+        }
+        public bool VizsgaSikeres()
+        {
+            return ItHalozatIrasbeli > 0.50 &&
+                   ProgramozasIrasbeli > 0.50 &&
+                   HalozatokAModul > 0.50 &&
+                   HalozatokBModul > 0.50 &&
+                   HalozatokCModul > 0.50 &&
+                   HalozatokDModul > 0.50 &&
+                   SzobeliAngol > 0.50 &&
+                   SzobeliIT > 0.50;
         }
     }
 }
